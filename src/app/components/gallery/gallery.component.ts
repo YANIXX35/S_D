@@ -31,9 +31,17 @@ export interface MediaItem {
     :host { display: block; }
 
     .gallery-section {
-      background: #0d0a0b;
+      background: linear-gradient(180deg, #080508 0%, #0e0812 50%, #080508 100%);
       padding: 6rem 1.5rem;
       position: relative;
+    }
+
+    .gallery-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 50%, #4a207012 0%, transparent 70%);
+      pointer-events: none;
     }
 
     @media (min-width: 768px) {
@@ -85,17 +93,22 @@ export interface MediaItem {
     /* ─── Media card ─── */
     .media-card {
       position: relative;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
       aspect-ratio: 3 / 4;
       cursor: pointer;
       opacity: 0;
       background: #1a0d14;
-      border: 1px solid #c9a96e15;
-      transition: border-color 0.3s ease;
+      border: 1px solid #d4a84320;
+      transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 4px 24px #00000050;
     }
 
-    .media-card:hover { border-color: #c9a96e44; }
+    .media-card:hover {
+      border-color: #d4a84355;
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 16px 48px #00000060, 0 0 24px #d4a84318;
+    }
 
     .media-card img,
     .media-card video {
@@ -115,29 +128,30 @@ export interface MediaItem {
     .media-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, #0d0a0bcc 0%, transparent 60%);
+      background: linear-gradient(to top, #08050899 0%, #12091a55 50%, transparent 100%);
       opacity: 0;
-      transition: opacity 0.35s ease;
+      transition: opacity 0.4s ease;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 1rem;
+      padding: 1.2rem;
     }
 
     .media-card:hover .media-overlay { opacity: 1; }
 
     .overlay-caption {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-style: italic;
-      color: #f5f0eb;
+      color: #faf5ef;
       line-height: 1.4;
     }
 
     .overlay-moment {
       font-family: 'Great Vibes', cursive;
-      font-size: 1.1rem;
-      color: #c9a96e;
+      font-size: 1.25rem;
+      color: #d4a843;
+      text-shadow: 0 0 16px #d4a84355;
     }
 
     /* Video badge */

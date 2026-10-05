@@ -29,10 +29,20 @@ export interface TimelineEvent {
     :host { display: block; }
 
     .timeline-section {
-      background: linear-gradient(180deg, #0d0a0b 0%, #130a10 50%, #0d0a0b 100%);
+      background: linear-gradient(180deg, #080508 0%, #12091a 30%, #1a0a12 60%, #080508 100%);
       padding: 6rem 1.5rem;
       position: relative;
       overflow: hidden;
+    }
+
+    .timeline-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 40% at 20% 30%, #4a207018 0%, transparent 60%),
+        radial-gradient(ellipse 50% 30% at 80% 70%, #c0607015 0%, transparent 60%);
+      pointer-events: none;
     }
 
     @media (min-width: 768px) {
@@ -46,17 +56,18 @@ export interface TimelineEvent {
 
     .section-eyebrow {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      color: #c9a96e;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: #d4a843;
       display: block;
       margin-bottom: 0.5rem;
+      text-shadow: 0 0 30px #d4a84344;
     }
 
     .section-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 3.8rem);
       font-weight: 700;
-      background: linear-gradient(135deg, #e2c99a 0%, #c9a96e 60%, #e8b4b8 100%);
+      background: linear-gradient(135deg, #f0cc7a 0%, #d4a843 40%, #f0c0c8 80%, #e090a0 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -78,8 +89,9 @@ export interface TimelineEvent {
       top: 0;
       bottom: 0;
       width: 1px;
-      background: linear-gradient(to bottom, transparent, #c9a96e66, #e8b4b844, #c9a96e66, transparent);
+      background: linear-gradient(to bottom, transparent, #d4a84388, #f0c0c855, #d4a84388, transparent);
       transform: translateX(-50%);
+      box-shadow: 0 0 8px #d4a84322;
     }
 
     @media (max-width: 767px) {
@@ -111,19 +123,21 @@ export interface TimelineEvent {
     /* ─── The card ─── */
     .event-card {
       flex: 1;
-      background: linear-gradient(135deg, #1a0d1466, #130a1066);
-      border: 1px solid #c9a96e22;
-      border-radius: 16px;
-      padding: 1.6rem 1.8rem;
+      background: linear-gradient(135deg, #1e0d2488 0%, #1a0a1480 60%, #120a1888 100%);
+      border: 1px solid #d4a84330;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
       position: relative;
-      backdrop-filter: blur(8px);
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
       max-width: calc(50% - 2rem);
+      box-shadow: 0 8px 32px #00000040, inset 0 1px 0 #d4a84315;
     }
 
     .event-card:hover {
-      border-color: #c9a96e55;
-      transform: translateY(-4px);
+      border-color: #d4a84366;
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px #00000050, 0 0 30px #d4a84315, inset 0 1px 0 #d4a84325;
     }
 
     @media (max-width: 767px) {
@@ -135,15 +149,15 @@ export interface TimelineEvent {
     /* ─── The center dot ─── */
     .timeline-dot {
       flex-shrink: 0;
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #c9a96e, #e8b4b8);
+      background: linear-gradient(135deg, #d4a843, #f0c0c8, #e090a0);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
-      box-shadow: 0 0 20px #c9a96e44;
+      box-shadow: 0 0 0 4px #d4a84320, 0 0 24px #d4a84355;
       position: relative;
       z-index: 2;
       margin-top: 1rem;
@@ -169,35 +183,36 @@ export interface TimelineEvent {
 
     /* ─── Card internals ─── */
     .event-date {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 0.85rem;
-      color: #c9a96e;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.72rem;
+      color: #d4a843;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.4rem;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.5rem;
     }
 
     .event-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
       font-weight: 700;
-      color: #f5f0eb;
-      margin-bottom: 0.3rem;
-      line-height: 1.3;
+      color: #faf5ef;
+      margin-bottom: 0.25rem;
+      line-height: 1.25;
     }
 
     .event-subtitle {
       font-family: 'Great Vibes', cursive;
-      font-size: 1.15rem;
-      color: #e8b4b8;
-      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      color: #f0c0c8;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 20px #e090a044;
     }
 
     .event-description {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.05rem;
-      color: #b8b0a8;
-      line-height: 1.75;
+      font-size: 1.08rem;
+      color: #c8c0b8;
+      line-height: 1.8;
       font-style: italic;
     }
 

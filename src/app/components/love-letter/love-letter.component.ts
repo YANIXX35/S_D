@@ -19,10 +19,20 @@ gsap.registerPlugin(ScrollTrigger);
     :host { display: block; }
 
     .letter-section {
-      background: linear-gradient(180deg, #0d0a0b 0%, #130d18 40%, #1a0a12 70%, #0d0a0b 100%);
+      background: linear-gradient(180deg, #080508 0%, #12091a 30%, #1a0a12 60%, #0e0812 85%, #080508 100%);
       padding: 6rem 1.5rem;
       position: relative;
       overflow: hidden;
+    }
+
+    .letter-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 30% 40%, #4a207018 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 75% 65%, #7a153520 0%, transparent 60%);
+      pointer-events: none;
     }
 
     @media (min-width: 768px) {
@@ -74,15 +84,18 @@ gsap.registerPlugin(ScrollTrigger);
     .letter-card {
       position: relative;
       z-index: 1;
-      max-width: 720px;
+      max-width: 740px;
       margin: 0 auto;
-      background: linear-gradient(145deg, #1e1018 0%, #160c14 40%, #1a0f10 100%);
-      border: 1px solid #c9a96e33;
-      border-radius: 20px;
+      background: linear-gradient(145deg, #1e0d2a 0%, #180c18 35%, #1a0a14 65%, #1c0f10 100%);
+      border: 1px solid #d4a84340;
+      border-radius: 24px;
       padding: 3.5rem 3rem;
       box-shadow:
-        0 0 40px #00000066,
-        inset 0 0 60px #c9a96e05;
+        0 0 0 1px #d4a84310,
+        0 8px 60px #00000070,
+        0 0 80px #4a207015,
+        inset 0 0 60px #d4a84308,
+        inset 0 1px 0 #d4a84320;
       opacity: 0;
     }
 
@@ -116,18 +129,19 @@ gsap.registerPlugin(ScrollTrigger);
     /* ─── Letter content ─── */
     .letter-salutation {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      color: #c9a96e;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: #d4a843;
       margin-bottom: 2rem;
       display: block;
       line-height: 1.2;
+      text-shadow: 0 0 30px #d4a84340;
     }
 
     .letter-body {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
-      line-height: 1.95;
-      color: #d4cec7;
+      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      line-height: 2;
+      color: #d8d0c8;
     }
 
     .letter-body p {
@@ -137,12 +151,12 @@ gsap.registerPlugin(ScrollTrigger);
     .letter-body p:last-of-type { margin-bottom: 0; }
 
     .letter-body em {
-      color: #e8b4b8;
+      color: #f0c0c8;
       font-style: italic;
     }
 
     .letter-body strong {
-      color: #f5f0eb;
+      color: #faf5ef;
       font-weight: 600;
     }
 
@@ -151,7 +165,7 @@ gsap.registerPlugin(ScrollTrigger);
       align-items: center;
       gap: 1rem;
       margin: 2rem 0;
-      color: #c9a96e55;
+      color: #d4a84366;
     }
 
     .letter-separator::before,
@@ -159,23 +173,27 @@ gsap.registerPlugin(ScrollTrigger);
       content: '';
       flex: 1;
       height: 1px;
-      background: #c9a96e22;
+      background: linear-gradient(to right, transparent, #d4a84330);
+    }
+    .letter-separator::after {
+      background: linear-gradient(to left, transparent, #d4a84330);
     }
 
     .letter-closing {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.05rem;
-      color: #b8b0a8;
+      font-size: 1.08rem;
+      color: #c8c0b8;
       font-style: italic;
-      margin-top: 1.6rem;
+      margin-top: 1.8rem;
     }
 
     .letter-signature {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      color: #c9a96e;
-      margin-top: 0.5rem;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      color: #d4a843;
+      margin-top: 0.4rem;
       display: block;
+      text-shadow: 0 0 24px #d4a84344;
     }
 
     /* Heart seal */

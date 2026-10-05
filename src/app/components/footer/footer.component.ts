@@ -32,11 +32,12 @@ interface FallingHeart {
 
     .footer-section {
       position: relative;
-      background: linear-gradient(180deg, #0d0a0b 0%, #0a0608 100%);
+      background: linear-gradient(180deg, #080508 0%, #0e0812 40%, #080508 100%);
       padding: 6rem 1.5rem 4rem;
       overflow: hidden;
       text-align: center;
-      border-top: 1px solid #c9a96e15;
+      border-top: 1px solid #d4a84322;
+      box-shadow: inset 0 1px 0 #d4a84315;
     }
 
     canvas {
@@ -55,14 +56,15 @@ interface FallingHeart {
 
     .footer-script {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      background: linear-gradient(135deg, #e2c99a 0%, #c9a96e 50%, #e8b4b8 100%);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      background: linear-gradient(135deg, #f0cc7a 0%, #d4a843 40%, #f0c0c8 75%, #e090a0 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       line-height: 1.2;
       margin-bottom: 1.5rem;
       display: block;
+      filter: drop-shadow(0 0 20px #d4a84330);
     }
 
     .footer-tagline {

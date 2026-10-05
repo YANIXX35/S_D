@@ -1,26 +1,57 @@
 <section class="hero-section">
-  <!-- Ambient glow -->
-  <div class="radial-glow"></div>
+
+  <!-- Background photo blurred -->
+  <div class="hero-bg-photo"></div>
+
+  <!-- Deep overlay gradient -->
+  <div class="hero-overlay"></div>
+
+  <!-- Ambient color glows -->
+  <div class="glow glow-left"></div>
+  <div class="glow glow-right"></div>
 
   <!-- Particle canvas -->
   <canvas #particleCanvas></canvas>
 
-  <!-- Main content -->
-  <div class="hero-content">
-    <p class="eyebrow">Pour toi,</p>
-    <h1 class="main-title">Sarah Bébé</h1>
-    <p class="subtitle">Une page écrite avec tout l'amour que tu mérites</p>
+  <!-- Main layout -->
+  <div class="hero-layout">
 
-    <div class="date-badge">
-      <span class="dot"></span>
-      Ensemble depuis août 2026
-      <span class="dot"></span>
+    <!-- Left: Text content -->
+    <div class="hero-content">
+      <p class="eyebrow">Pour toi,</p>
+      <h1 class="main-title">Sarah<br><span class="title-accent">Bébé</span></h1>
+      <p class="subtitle">Une page écrite avec tout l'amour<br>que tu mérites</p>
+
+      <div class="date-badge">
+        <span class="dot"></span>
+        Ensemble depuis août 2026
+        <span class="dot"></span>
+      </div>
+
+      <div class="hero-cta" (click)="scrollToNext()" style="cursor:pointer;">
+        <span>Découvrir notre histoire</span>
+        <div class="cta-arrow">↓</div>
+      </div>
     </div>
+
+    <!-- Right: Portrait frame -->
+    <div class="portrait-wrap">
+      <div class="portrait-ring ring-3"></div>
+      <div class="portrait-ring ring-2"></div>
+      <div class="portrait-ring ring-1"></div>
+      <div class="portrait-frame">
+        <img src="assets/media/photo1.jpeg" alt="Sarah" />
+      </div>
+      <div class="portrait-label">
+        <span class="font-script">Ma Sarah</span>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="scroll-hint" (click)="scrollToNext()" style="cursor: pointer;">
+  <!-- Scroll hint bottom -->
+  <div class="scroll-hint">
     <div class="scroll-arrow"></div>
-    <span>Découvrir</span>
   </div>
+
 </section>
