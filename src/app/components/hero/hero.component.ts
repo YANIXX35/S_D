@@ -44,7 +44,7 @@ interface Particle {
     .hero-bg-photo {
       position: absolute;
       inset: 0;
-      background: url('assets/media/photo2.jpeg') center center / cover no-repeat;
+      background: url('/assets/media/photo2.jpeg') center center / cover no-repeat;
       filter: blur(18px) brightness(0.25) saturate(1.4);
       transform: scale(1.08);
       pointer-events: none;
