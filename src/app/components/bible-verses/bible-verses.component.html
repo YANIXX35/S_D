@@ -1,0 +1,57 @@
+<section class="verses-section">
+
+  <!-- Ambient -->
+  <div class="ambient-top"></div>
+  <div class="ambient-bottom"></div>
+
+  <!-- Header -->
+  <div class="section-header">
+    <span class="section-eyebrow">Parole de Dieu</span>
+    <h2 class="section-title">Unis en Lui,<br>rien ne peut nous séparer</h2>
+    <div class="divider-cross">
+      <span class="line"></span>
+      <span class="cross-icon">✝</span>
+      <span class="line"></span>
+    </div>
+    <p class="header-intro">
+      Parce que notre amour est fondé sur quelque chose de plus grand que nous deux —
+      sur Celui qui est amour lui-même.
+    </p>
+  </div>
+
+  <!-- Verses grid -->
+  <div class="verses-grid">
+
+    @for (verse of verses; track verse.ref; let i = $index) {
+      <div class="verse-card" [class.featured]="verse.featured">
+
+        <!-- Decorative quote mark -->
+        <span class="quote-mark" aria-hidden="true">"</span>
+
+        <!-- Verse text -->
+        <blockquote class="verse-text">{{ verse.text }}</blockquote>
+
+        <!-- Reference -->
+        <div class="verse-ref-block">
+          <span class="ref-line"></span>
+          <cite class="verse-ref">{{ verse.ref }}</cite>
+        </div>
+
+        <!-- Theme tag -->
+        <span class="verse-tag">{{ verse.tag }}</span>
+
+      </div>
+    }
+
+  </div>
+
+  <!-- Closing declaration -->
+  <div class="closing-declaration">
+    <div class="decl-cross">✝</div>
+    <p class="decl-text">
+      Ce que Dieu unit, personne ne peut le séparer.<br>
+      <em>Marc 10 : 9</em>
+    </p>
+  </div>
+
+</section>

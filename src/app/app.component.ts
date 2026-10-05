@@ -3,6 +3,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { LoveLetterComponent } from './components/love-letter/love-letter.component';
+import { BibleVersesComponent } from './components/bible-verses/bible-verses.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
@@ -13,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
     TimelineComponent,
     GalleryComponent,
     LoveLetterComponent,
+    BibleVersesComponent,
     FooterComponent,
   ],
   template: `
@@ -21,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
       <app-timeline></app-timeline>
       <app-gallery></app-gallery>
       <app-love-letter></app-love-letter>
+      <app-bible-verses></app-bible-verses>
       <app-footer></app-footer>
     </main>
   `,
