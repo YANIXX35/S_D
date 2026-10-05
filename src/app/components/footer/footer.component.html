@@ -1,0 +1,41 @@
+<footer class="footer-section">
+
+  <!-- Falling hearts canvas -->
+  <canvas #heartCanvas style="position: absolute; inset: 0; width: 100%; height: 100%;"></canvas>
+
+  <div class="footer-inner">
+
+    <!-- Navigation scroll links -->
+    <nav aria-label="Navigation de la page">
+      <ul class="nav-links">
+        <li><a href="#" (click)="scrollTo('app-hero'); $event.preventDefault()">Accueil</a></li>
+        <li><a href="#" (click)="scrollTo('app-timeline'); $event.preventDefault()">Nos souvenirs</a></li>
+        <li><a href="#" (click)="scrollTo('app-gallery'); $event.preventDefault()">Galerie</a></li>
+        <li><a href="#" (click)="scrollTo('app-love-letter'); $event.preventDefault()">La lettre</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-divider">
+      <span class="footer-heart-icon" aria-hidden="true">❤</span>
+    </div>
+
+    <!-- Main message -->
+    <span class="footer-script">Pour toujours, ma Sarah</span>
+
+    <p class="footer-tagline">
+      Chaque instant passé avec toi est un cadeau.<br>
+      Je ne cesserai jamais de te le rappeler.
+    </p>
+
+    <div class="footer-divider" aria-hidden="true">
+      <span style="color: #c9a96e44; font-size: 0.9rem;">♦</span>
+    </div>
+
+    <!-- Meta -->
+    <p class="footer-meta">
+      Créé avec ❤️ par Yanisse &mdash; Octobre 2026
+    </p>
+
+  </div>
+
+</footer>

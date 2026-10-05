@@ -1,0 +1,46 @@
+<section class="timeline-section">
+
+  <!-- Section header -->
+  <div class="section-header">
+    <span class="section-eyebrow">Nos souvenirs</span>
+    <h2 class="section-title">Deux mois d'histoire</h2>
+    <div class="divider-gold">
+      <span style="color: #c9a96e; font-size: 1.2rem;">♦</span>
+    </div>
+  </div>
+
+  <!-- Timeline track -->
+  <div class="timeline-track">
+
+    @for (event of events; track event.title; let i = $index) {
+      <div class="timeline-event" [class]="'from-' + event.side">
+
+        <!-- Left spacer (only on desktop, for right-side events) -->
+        @if (event.side === 'right') {
+          <div class="event-spacer"></div>
+        }
+
+        <!-- Center dot -->
+        <div class="timeline-dot" [attr.aria-hidden]="true">
+          {{ event.emoji }}
+        </div>
+
+        <!-- Event card -->
+        <div class="event-card">
+          <div class="event-date">{{ event.date }}</div>
+          <h3 class="event-title">{{ event.title }}</h3>
+          <p class="event-subtitle">{{ event.subtitle }}</p>
+          <p class="event-description">{{ event.description }}</p>
+        </div>
+
+        <!-- Right spacer (only on desktop, for left-side events) -->
+        @if (event.side === 'left') {
+          <div class="event-spacer"></div>
+        }
+
+      </div>
+    }
+
+  </div>
+
+</section>

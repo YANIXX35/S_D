@@ -1,0 +1,26 @@
+<section class="hero-section">
+  <!-- Ambient glow -->
+  <div class="radial-glow"></div>
+
+  <!-- Particle canvas -->
+  <canvas #particleCanvas></canvas>
+
+  <!-- Main content -->
+  <div class="hero-content">
+    <p class="eyebrow">Pour toi,</p>
+    <h1 class="main-title">Sarah Bébé</h1>
+    <p class="subtitle">Une page écrite avec tout l'amour que tu mérites</p>
+
+    <div class="date-badge">
+      <span class="dot"></span>
+      Ensemble depuis août 2026
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-hint" (click)="scrollToNext()" style="cursor: pointer;">
+    <div class="scroll-arrow"></div>
+    <span>Découvrir</span>
+  </div>
+</section>

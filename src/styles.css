@@ -1,0 +1,107 @@
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Global reset & tokens ──────────────────────────────────── */
+:root {
+  --c-deep:       #0d0a0b;
+  --c-deep-alt:   #130a10;
+  --c-gold:       #c9a96e;
+  --c-gold-light: #e2c99a;
+  --c-rose:       #e8b4b8;
+  --c-rose-dark:  #c4838a;
+  --c-cream:      #f5f0eb;
+  --c-cream-dim:  #b8b0a8;
+  --c-bordeaux:   #6b1630;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--c-deep);
+  color: var(--c-cream);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Scrollbar custom ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-gold);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-gold-light);
+}
+
+/* ─── Typography helpers ─────────────────────────────────────── */
+.font-display  { font-family: 'Playfair Display', Georgia, serif; }
+.font-body     { font-family: 'Cormorant Garamond', Georgia, serif; }
+.font-script   { font-family: 'Great Vibes', cursive; }
+
+/* ─── Section common padding ─────────────────────────────────── */
+.section-padding {
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 8rem 2.5rem;
+  }
+}
+
+/* ─── Decorative divider ─────────────────────────────────────── */
+.divider-gold {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 320px;
+}
+.divider-gold::before,
+.divider-gold::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--c-gold));
+}
+.divider-gold::after {
+  background: linear-gradient(to left, transparent, var(--c-gold));
+}
+
+/* ─── Gold text gradient ─────────────────────────────────────── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--c-gold-light) 0%, var(--c-gold) 50%, var(--c-rose-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Shimmer animation on decorative elements ───────────────── */
+@keyframes shimmer {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 1;   }
+  100% { opacity: 0.4; }
+}
+
+/* ─── Reduced motion override ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

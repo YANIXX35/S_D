@@ -1,0 +1,109 @@
+<section class="gallery-section">
+
+  <!-- Header -->
+  <div class="section-header">
+    <span class="section-eyebrow">Nos photos & vidéos</span>
+    <h2 class="section-title">Chaque image, un souvenir</h2>
+    <div class="divider-gold">
+      <span style="color: #c9a96e; font-size: 1.2rem;">♦</span>
+    </div>
+  </div>
+
+  <!-- Media grid -->
+  <div class="media-grid">
+    @for (item of media; track item.src; let i = $index) {
+      <div
+        class="media-card"
+        role="button"
+        [attr.aria-label]="'Voir : ' + item.caption"
+        tabindex="0"
+        (click)="openLightbox(item, i)"
+        (keydown.enter)="openLightbox(item, i)"
+        (keydown.space)="openLightbox(item, i)"
+      >
+        <!-- Media content -->
+        @if (item.type === 'photo') {
+          <img
+            [src]="item.src"
+            [alt]="item.caption"
+            loading="lazy"
+          />
+        } @else {
+          <video
+            [src]="item.src"
+            muted
+            autoplay
+            loop
+            playsinline
+            [attr.aria-label]="item.caption"
+          ></video>
+
+          <!-- Video play badge -->
+          <div class="video-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        }
+
+        <!-- Hover overlay -->
+        <div class="media-overlay" aria-hidden="true">
+          <p class="overlay-moment">{{ item.moment }}</p>
+          <p class="overlay-caption">{{ item.caption }}</p>
+        </div>
+      </div>
+    }
+  </div>
+
+</section>
+
+<!-- ─── Lightbox ───────────────────────────────────────────────── -->
+@if (lightboxItem()) {
+  <div
+    class="lightbox-overlay"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="lightboxItem()!.caption"
+    (click)="onOverlayClick($event)"
+  >
+    <!-- Close button -->
+    <button
+      class="lightbox-close"
+      aria-label="Fermer"
+      (click)="closeLightbox()"
+    >
+      ✕
+    </button>
+
+    <!-- Prev / Next -->
+    @if (lightboxIndex() > 0) {
+      <button class="lightbox-nav prev" aria-label="Précédent" (click)="prev()">‹</button>
+    }
+    @if (lightboxIndex() < media.length - 1) {
+      <button class="lightbox-nav next" aria-label="Suivant" (click)="next()">›</button>
+    }
+
+    <!-- Content -->
+    <div class="lightbox-inner">
+      @if (lightboxItem()!.type === 'photo') {
+        <img
+          [src]="lightboxItem()!.src"
+          [alt]="lightboxItem()!.caption"
+        />
+      } @else {
+        <video
+          [src]="lightboxItem()!.src"
+          controls
+          autoplay
+          playsinline
+          [attr.aria-label]="lightboxItem()!.caption"
+        ></video>
+      }
+
+      <div class="lightbox-caption-block">
+        <p class="lightbox-moment">{{ lightboxItem()!.moment }}</p>
+        <p class="lightbox-caption">{{ lightboxItem()!.caption }}</p>
+      </div>
+    </div>
+  </div>
+}
