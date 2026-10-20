@@ -1,4 +1,4 @@
-import {
+﻿import {
   Component,
   OnInit,
   OnDestroy,
@@ -32,7 +32,7 @@ interface FallingHeart {
 
     .footer-section {
       position: relative;
-      background: linear-gradient(180deg, #080508 0%, #0e0812 40%, #080508 100%);
+      background: linear-gradient(180deg, #0c0b10 0%, #0e0812 40%, #0c0b10 100%);
       padding: 6rem 1.5rem 4rem;
       overflow: hidden;
       text-align: center;
@@ -57,7 +57,7 @@ interface FallingHeart {
     .footer-script {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.8rem, 6vw, 5rem);
-      background: linear-gradient(135deg, #f0cc7a 0%, #d4a843 40%, #f0c0c8 75%, #e090a0 100%);
+      background: linear-gradient(135deg, #cdc8f0 0%, #a89fd4 40%, #e8c4d0 75%, #d090a8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -70,7 +70,7 @@ interface FallingHeart {
     .footer-tagline {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      color: #b8b0a8;
+      color: #c0bcd8;
       font-style: italic;
       line-height: 1.7;
       margin-bottom: 2.5rem;
@@ -88,10 +88,10 @@ interface FallingHeart {
       content: '';
       flex: 1;
       height: 1px;
-      background: linear-gradient(to right, transparent, #c9a96e66);
+      background: linear-gradient(to right, transparent, #a89fd466);
     }
     .footer-divider::after {
-      background: linear-gradient(to left, transparent, #c9a96e66);
+      background: linear-gradient(to left, transparent, #a89fd466);
     }
 
     .footer-heart-icon {
@@ -120,7 +120,7 @@ interface FallingHeart {
     .nav-links a {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 0.95rem;
-      color: #c9a96e;
+      color: #a89fd4;
       text-decoration: none;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -144,7 +144,7 @@ export class FooterComponent implements OnInit, AfterViewInit, OnDestroy {
   private hearts: FallingHeart[] = [];
   private animationId = 0;
   private ctx!: CanvasRenderingContext2D;
-  private colors = ['#c9a96e', '#e8b4b8', '#e2c99a', '#c4838a'];
+  private colors = ['#a89fd4', '#e8c4d0', '#cdc8f0', '#b07090'];
 
   ngOnInit(): void {}
 

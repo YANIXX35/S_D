@@ -1,4 +1,4 @@
-import {
+﻿import {
   Component,
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -19,7 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
     :host { display: block; }
 
     .letter-section {
-      background: linear-gradient(180deg, #080508 0%, #12091a 30%, #1a0a12 60%, #0e0812 85%, #080508 100%);
+      background: linear-gradient(180deg, #0c0b10 0%, #131220 30%, #1a1828 60%, #0e0812 85%, #0c0b10 100%);
       padding: 6rem 1.5rem;
       position: relative;
       overflow: hidden;
@@ -44,12 +44,12 @@ gsap.registerPlugin(ScrollTrigger);
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(1px 1px at 20% 30%, #c9a96e55 0%, transparent 100%),
-        radial-gradient(1px 1px at 60% 15%, #e8b4b844 0%, transparent 100%),
-        radial-gradient(1px 1px at 80% 70%, #c9a96e33 0%, transparent 100%),
-        radial-gradient(1px 1px at 10% 80%, #e8b4b822 0%, transparent 100%),
-        radial-gradient(1px 1px at 45% 55%, #c9a96e44 0%, transparent 100%),
-        radial-gradient(2px 2px at 75% 40%, #c9a96e22 0%, transparent 100%);
+        radial-gradient(1px 1px at 20% 30%, #a89fd455 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 15%, #e8c4d044 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 70%, #a89fd433 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 80%, #e8c4d022 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 55%, #a89fd444 0%, transparent 100%),
+        radial-gradient(2px 2px at 75% 40%, #a89fd422 0%, transparent 100%);
       pointer-events: none;
     }
 
@@ -63,7 +63,7 @@ gsap.registerPlugin(ScrollTrigger);
     .section-eyebrow {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      color: #c9a96e;
+      color: #a89fd4;
       display: block;
       margin-bottom: 0.5rem;
     }
@@ -72,7 +72,7 @@ gsap.registerPlugin(ScrollTrigger);
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 700;
-      background: linear-gradient(135deg, #e2c99a 0%, #c9a96e 60%, #e8b4b8 100%);
+      background: linear-gradient(135deg, #cdc8f0 0%, #a89fd4 60%, #e8c4d0 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -110,7 +110,7 @@ gsap.registerPlugin(ScrollTrigger);
       position: absolute;
       width: 60px;
       height: 60px;
-      border-color: #c9a96e33;
+      border-color: #a89fd433;
       border-style: solid;
     }
     .letter-card::before {
@@ -130,7 +130,7 @@ gsap.registerPlugin(ScrollTrigger);
     .letter-salutation {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.2rem, 5vw, 3.5rem);
-      color: #d4a843;
+      color: #a89fd4;
       margin-bottom: 2rem;
       display: block;
       line-height: 1.2;
@@ -151,7 +151,7 @@ gsap.registerPlugin(ScrollTrigger);
     .letter-body p:last-of-type { margin-bottom: 0; }
 
     .letter-body em {
-      color: #f0c0c8;
+      color: #e8c4d0;
       font-style: italic;
     }
 
@@ -190,7 +190,7 @@ gsap.registerPlugin(ScrollTrigger);
     .letter-signature {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.2rem, 4vw, 3rem);
-      color: #d4a843;
+      color: #a89fd4;
       margin-top: 0.4rem;
       display: block;
       text-shadow: 0 0 24px #d4a84344;
@@ -206,15 +206,18 @@ gsap.registerPlugin(ScrollTrigger);
     .seal-heart {
       width: 52px;
       height: 52px;
-      background: linear-gradient(135deg, #c9a96e, #e8b4b8);
+      background: linear-gradient(135deg, #a89fd4, #e8c4d0);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      box-shadow: 0 0 24px #c9a96e44;
+      box-shadow: 0 0 24px #a89fd444;
       animation: heartbeat 2s ease-in-out infinite;
     }
+
+    /* Reveal paragraphs */
+    .reveal-para { opacity: 0; }
 
     @keyframes heartbeat {
       0%, 100% { transform: scale(1); }
@@ -227,38 +230,51 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class LoveLetterComponent implements AfterViewInit {
   ngAfterViewInit(): void {
-    gsap.to('.letter-card', {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.letter-card',
-        start: 'top 75%',
-        toggleActions: 'play none none none',
-      },
+    // Card entrance
+    gsap.fromTo('.letter-card',
+      { opacity: 0, y: 60 },
+      {
+        opacity: 1, y: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.letter-card',
+          start: 'top 78%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+
+    // Paragraphs reveal one by one
+    const paras = document.querySelectorAll('.reveal-para');
+    paras.forEach((el, i) => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.85,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+          },
+          delay: i < 3 ? i * 0.08 : 0,
+        }
+      );
     });
 
-    gsap.from('.letter-card', {
-      y: 60,
-      scrollTrigger: {
-        trigger: '.letter-card',
-        start: 'top 75%',
-        toggleActions: 'play none none none',
-      },
-      duration: 1.2,
-      ease: 'power3.out',
-    });
-
-    gsap.from('.section-header', {
-      opacity: 0,
-      y: 40,
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.letter-section',
-        start: 'top 80%',
-      },
-    });
+    gsap.fromTo('.section-header',
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1, y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.letter-section',
+          start: 'top 80%',
+        },
+      }
+    );
   }
 }

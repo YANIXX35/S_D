@@ -1,4 +1,4 @@
-import {
+﻿import {
   Component,
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -20,7 +20,7 @@ gsap.registerPlugin(ScrollTrigger);
 
     .promises-section {
       position: relative;
-      background: linear-gradient(180deg, #080508 0%, #0e0a14 40%, #12091a 60%, #080508 100%);
+      background: linear-gradient(180deg, #0c0b10 0%, #0e0a14 40%, #131220 60%, #0c0b10 100%);
       padding: 7rem 1.5rem;
       overflow: hidden;
     }
@@ -44,7 +44,7 @@ gsap.registerPlugin(ScrollTrigger);
     .section-eyebrow {
       font-family: 'Cinzel', Georgia, serif;
       font-size: clamp(0.7rem, 1.5vw, 0.85rem);
-      color: #d4a843;
+      color: #a89fd4;
       text-transform: uppercase;
       letter-spacing: 0.3em;
       display: block;
@@ -56,7 +56,7 @@ gsap.registerPlugin(ScrollTrigger);
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 700;
       line-height: 1.2;
-      background: linear-gradient(135deg, #f0cc7a 0%, #d4a843 40%, #f0c0c8 80%);
+      background: linear-gradient(135deg, #cdc8f0 0%, #a89fd4 40%, #e8c4d0 80%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -76,8 +76,8 @@ gsap.registerPlugin(ScrollTrigger);
       flex: 1;
       height: 1px;
     }
-    .divider-gold::before { background: linear-gradient(to right, transparent, #d4a843); }
-    .divider-gold::after  { background: linear-gradient(to left, transparent, #d4a843); }
+    .divider-gold::before { background: linear-gradient(to right, transparent, #a89fd4); }
+    .divider-gold::after  { background: linear-gradient(to left, transparent, #a89fd4); }
 
     /* Grid */
     .promises-grid {
@@ -100,7 +100,7 @@ gsap.registerPlugin(ScrollTrigger);
 
     /* Card */
     .promise-card {
-      background: linear-gradient(145deg, #1a0e2880 0%, #1a0a1480 100%);
+      background: linear-gradient(145deg, #1a183080 0%, #1a0a1480 100%);
       border: 1px solid #d4a84328;
       border-radius: 20px;
       padding: 2rem 1.6rem;
@@ -158,7 +158,7 @@ gsap.registerPlugin(ScrollTrigger);
     }
 
     .closing-note em {
-      color: #d4a843;
+      color: #a89fd4;
       font-style: italic;
     }
   `]

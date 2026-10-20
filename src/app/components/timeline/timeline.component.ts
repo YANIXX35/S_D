@@ -1,4 +1,4 @@
-import {
+﻿import {
   Component,
   OnInit,
   AfterViewInit,
@@ -29,7 +29,7 @@ export interface TimelineEvent {
     :host { display: block; }
 
     .timeline-section {
-      background: linear-gradient(180deg, #080508 0%, #12091a 30%, #1a0a12 60%, #080508 100%);
+      background: linear-gradient(180deg, #0c0b10 0%, #131220 30%, #1a1828 60%, #0c0b10 100%);
       padding: 6rem 1.5rem;
       position: relative;
       overflow: hidden;
@@ -57,7 +57,7 @@ export interface TimelineEvent {
     .section-eyebrow {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      color: #d4a843;
+      color: #a89fd4;
       display: block;
       margin-bottom: 0.5rem;
       text-shadow: 0 0 30px #d4a84344;
@@ -67,7 +67,7 @@ export interface TimelineEvent {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(2rem, 5vw, 3.8rem);
       font-weight: 700;
-      background: linear-gradient(135deg, #f0cc7a 0%, #d4a843 40%, #f0c0c8 80%, #e090a0 100%);
+      background: linear-gradient(135deg, #cdc8f0 0%, #a89fd4 40%, #e8c4d0 80%, #d090a8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -89,7 +89,7 @@ export interface TimelineEvent {
       top: 0;
       bottom: 0;
       width: 1px;
-      background: linear-gradient(to bottom, transparent, #d4a84388, #f0c0c855, #d4a84388, transparent);
+      background: linear-gradient(to bottom, transparent, #d4a84388, #e8c4d055, #d4a84388, transparent);
       transform: translateX(-50%);
       box-shadow: 0 0 8px #d4a84322;
     }
@@ -123,7 +123,7 @@ export interface TimelineEvent {
     /* ─── The card ─── */
     .event-card {
       flex: 1;
-      background: linear-gradient(135deg, #1e0d2488 0%, #1a0a1480 60%, #120a1888 100%);
+      background: linear-gradient(135deg, #1a182888 0%, #1a0a1480 60%, #120a1888 100%);
       border: 1px solid #d4a84330;
       border-radius: 20px;
       padding: 1.8rem 2rem;
@@ -152,7 +152,7 @@ export interface TimelineEvent {
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #d4a843, #f0c0c8, #e090a0);
+      background: linear-gradient(135deg, #a89fd4, #e8c4d0, #d090a8);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -185,7 +185,7 @@ export interface TimelineEvent {
     .event-date {
       font-family: 'Cinzel', Georgia, serif;
       font-size: 0.72rem;
-      color: #d4a843;
+      color: #a89fd4;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       margin-bottom: 0.5rem;
@@ -203,9 +203,9 @@ export interface TimelineEvent {
     .event-subtitle {
       font-family: 'Great Vibes', cursive;
       font-size: 1.25rem;
-      color: #f0c0c8;
+      color: #e8c4d0;
       margin-bottom: 0.8rem;
-      text-shadow: 0 0 20px #e090a044;
+      text-shadow: 0 0 20px #d090a844;
     }
 
     .event-description {
@@ -224,8 +224,8 @@ export interface TimelineEvent {
       right: 1rem;
       width: 24px;
       height: 24px;
-      border-top: 1px solid #c9a96e33;
-      border-right: 1px solid #c9a96e33;
+      border-top: 1px solid #a89fd433;
+      border-right: 1px solid #a89fd433;
       border-radius: 0 4px 0 0;
     }
   `]

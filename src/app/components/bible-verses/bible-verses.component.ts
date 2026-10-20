@@ -1,4 +1,4 @@
-import {
+﻿import {
   Component,
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -28,7 +28,7 @@ interface BibleVerse {
     /* ─── Section ─── */
     .verses-section {
       position: relative;
-      background: linear-gradient(180deg, #080508 0%, #0e0a18 25%, #12091f 50%, #0e0a18 75%, #080508 100%);
+      background: linear-gradient(180deg, #0c0b10 0%, #0e0a18 25%, #12091f 50%, #0e0a18 75%, #0c0b10 100%);
       padding: 7rem 1.5rem;
       overflow: hidden;
     }
@@ -62,7 +62,7 @@ interface BibleVerse {
     .section-eyebrow {
       font-family: 'Cinzel', Georgia, serif;
       font-size: clamp(0.7rem, 1.5vw, 0.85rem);
-      color: #d4a843;
+      color: #a89fd4;
       text-transform: uppercase;
       letter-spacing: 0.3em;
       display: block;
@@ -74,7 +74,7 @@ interface BibleVerse {
       font-size: clamp(2rem, 5vw, 3.8rem);
       font-weight: 700;
       line-height: 1.15;
-      background: linear-gradient(135deg, #f0cc7a 0%, #d4a843 40%, #f0c0c8 80%, #e090a0 100%);
+      background: linear-gradient(135deg, #cdc8f0 0%, #a89fd4 40%, #e8c4d0 80%, #d090a8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -102,7 +102,7 @@ interface BibleVerse {
 
     .cross-icon {
       font-size: 1.2rem;
-      color: #d4a843;
+      color: #a89fd4;
       text-shadow: 0 0 20px #d4a84366;
     }
 
@@ -141,7 +141,7 @@ interface BibleVerse {
     /* ─── Verse card ─── */
     .verse-card {
       position: relative;
-      background: linear-gradient(145deg, #1a0e2888 0%, #160a1a80 50%, #1e0e1488 100%);
+      background: linear-gradient(145deg, #1a183088 0%, #13122a80 50%, #1e0e1488 100%);
       border: 1px solid #d4a84328;
       border-radius: 20px;
       padding: 2.2rem 1.8rem 1.8rem;
@@ -217,14 +217,14 @@ interface BibleVerse {
       display: block;
       width: 32px;
       height: 1px;
-      background: linear-gradient(to right, #d4a843, transparent);
+      background: linear-gradient(to right, #a89fd4, transparent);
       flex-shrink: 0;
     }
 
     .verse-ref {
       font-family: 'Cinzel', Georgia, serif;
       font-size: 0.75rem;
-      color: #d4a843;
+      color: #a89fd4;
       letter-spacing: 0.12em;
       font-style: normal;
     }
@@ -237,7 +237,7 @@ interface BibleVerse {
       border-radius: 999px;
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 0.8rem;
-      color: #a07830;
+      color: #7b75b0;
       letter-spacing: 0.05em;
     }
 
@@ -251,7 +251,7 @@ interface BibleVerse {
 
     .decl-cross {
       font-size: 2rem;
-      color: #d4a843;
+      color: #a89fd4;
       text-shadow: 0 0 30px #d4a84355;
       margin-bottom: 1rem;
       animation: pulse-glow 3s ease-in-out infinite;
@@ -267,7 +267,7 @@ interface BibleVerse {
     .decl-text em {
       font-family: 'Cinzel', Georgia, serif;
       font-size: 0.9em;
-      color: #d4a843;
+      color: #a89fd4;
       font-style: normal;
       letter-spacing: 0.08em;
     }

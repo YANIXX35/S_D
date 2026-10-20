@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PreloaderComponent } from './components/preloader/preloader.component';
+import { MusicPlayerComponent } from './components/music-player/music-player.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
@@ -11,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
   selector: 'app-root',
   standalone: true,
   imports: [
+    CommonModule,
+    PreloaderComponent,
+    MusicPlayerComponent,
     HeroComponent,
     TimelineComponent,
     GalleryComponent,
@@ -20,7 +26,9 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent,
   ],
   template: `
-    <main>
+    <app-preloader (done)="preloaderDone = true"></app-preloader>
+    <app-music-player></app-music-player>
+    <main [class.visible]="preloaderDone">
       <app-hero></app-hero>
       <app-timeline></app-timeline>
       <app-gallery></app-gallery>
@@ -32,10 +40,15 @@ import { FooterComponent } from './components/footer/footer.component';
   `,
   styles: [`
     main {
-      background-color: #0d0a0b;
+      background-color: #0c0b10;
       min-height: 100vh;
       overflow-x: hidden;
+      opacity: 0;
+      transition: opacity 0.8s ease;
     }
+    main.visible { opacity: 1; }
   `]
 })
-export class AppComponent {}
+export class AppComponent {
+  preloaderDone = false;
+}

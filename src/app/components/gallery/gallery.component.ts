@@ -1,4 +1,4 @@
-import {
+﻿import {
   Component,
   OnInit,
   AfterViewInit,
@@ -31,7 +31,7 @@ export interface MediaItem {
     :host { display: block; }
 
     .gallery-section {
-      background: linear-gradient(180deg, #080508 0%, #0e0812 50%, #080508 100%);
+      background: linear-gradient(180deg, #0c0b10 0%, #0e0812 50%, #0c0b10 100%);
       padding: 6rem 1.5rem;
       position: relative;
     }
@@ -56,7 +56,7 @@ export interface MediaItem {
     .section-eyebrow {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      color: #c9a96e;
+      color: #a89fd4;
       display: block;
       margin-bottom: 0.5rem;
     }
@@ -65,7 +65,7 @@ export interface MediaItem {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 700;
-      background: linear-gradient(135deg, #e2c99a 0%, #c9a96e 60%, #e8b4b8 100%);
+      background: linear-gradient(135deg, #cdc8f0 0%, #a89fd4 60%, #e8c4d0 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -128,7 +128,7 @@ export interface MediaItem {
     .media-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, #08050899 0%, #12091a55 50%, transparent 100%);
+      background: linear-gradient(to top, #0c0b1099 0%, #13122055 50%, transparent 100%);
       opacity: 0;
       transition: opacity 0.4s ease;
       display: flex;
@@ -150,7 +150,7 @@ export interface MediaItem {
     .overlay-moment {
       font-family: 'Great Vibes', cursive;
       font-size: 1.25rem;
-      color: #d4a843;
+      color: #a89fd4;
       text-shadow: 0 0 16px #d4a84355;
     }
 
@@ -161,7 +161,7 @@ export interface MediaItem {
       right: 0.6rem;
       width: 32px;
       height: 32px;
-      background: #c9a96ecc;
+      background: #a89fd4cc;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -169,7 +169,7 @@ export interface MediaItem {
     }
 
     .video-badge svg {
-      fill: #0d0a0b;
+      fill: #0c0b10;
       width: 12px;
       height: 12px;
       margin-left: 2px;
@@ -205,7 +205,7 @@ export interface MediaItem {
       max-height: 75vh;
       border-radius: 12px;
       object-fit: contain;
-      border: 1px solid #c9a96e33;
+      border: 1px solid #a89fd433;
       box-shadow: 0 0 60px #00000088;
     }
 
@@ -216,13 +216,13 @@ export interface MediaItem {
     .lightbox-moment {
       font-family: 'Great Vibes', cursive;
       font-size: 1.4rem;
-      color: #c9a96e;
+      color: #a89fd4;
     }
 
     .lightbox-caption {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1rem;
-      color: #b8b0a8;
+      color: #c0bcd8;
       font-style: italic;
     }
 
@@ -233,13 +233,13 @@ export interface MediaItem {
       width: 44px;
       height: 44px;
       background: #1a0d14;
-      border: 1px solid #c9a96e44;
+      border: 1px solid #a89fd444;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #c9a96e;
+      color: #a89fd4;
       font-size: 1.3rem;
       transition: background 0.2s ease;
       z-index: 1001;
@@ -253,7 +253,7 @@ export interface MediaItem {
       top: 50%;
       transform: translateY(-50%);
       background: #1a0d1499;
-      border: 1px solid #c9a96e33;
+      border: 1px solid #a89fd433;
       border-radius: 50%;
       width: 44px;
       height: 44px;
@@ -261,7 +261,7 @@ export interface MediaItem {
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: #c9a96e;
+      color: #a89fd4;
       font-size: 1.1rem;
       transition: background 0.2s ease;
       z-index: 1001;
