@@ -4,21 +4,21 @@
 
 /* ─── Design tokens ──────────────────────────────────────────── */
 :root {
-  --c-deep:        #080508;
-  --c-deep-2:      #12091a;
-  --c-deep-3:      #1a0a12;
-  --c-purple:      #2d1b45;
-  --c-purple-mid:  #4a2070;
-  --c-gold:        #d4a843;
-  --c-gold-light:  #f0cc7a;
-  --c-gold-dim:    #a07830;
-  --c-rose:        #f0c0c8;
-  --c-rose-mid:    #e090a0;
-  --c-rose-dark:   #c06070;
-  --c-cream:       #faf5ef;
-  --c-cream-dim:   #c8c0b8;
-  --c-bordeaux:    #7a1535;
-  --c-mauve:       #9b5e8a;
+  --c-deep:        #0c0b10;
+  --c-deep-2:      #131220;
+  --c-deep-3:      #1a1828;
+  --c-purple:      #2e2a4a;
+  --c-purple-mid:  #5a5090;
+  --c-accent:      #a89fd4;
+  --c-accent-light:#cdc8f0;
+  --c-accent-dim:  #6b64a0;
+  --c-rose:        #e8c4d0;
+  --c-rose-mid:    #d0909c;
+  --c-rose-dark:   #b06070;
+  --c-cream:       #f8f5ff;
+  --c-cream-dim:   #c0bcd8;
+  --c-warm:        #e8d8c0;
+  --c-warm-dim:    #a09080;
   scroll-behavior: smooth;
 }
 

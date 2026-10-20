@@ -36,9 +36,6 @@
 
     <!-- Right: Portrait frame with video -->
     <div class="portrait-wrap">
-      <div class="portrait-ring ring-3"></div>
-      <div class="portrait-ring ring-2"></div>
-      <div class="portrait-ring ring-1"></div>
       <div class="portrait-frame" (click)="toggleSound()" style="cursor:pointer;">
         <video
           #portraitVideo
@@ -49,7 +46,6 @@
           muted
           aria-label="Vidéo de Sarah"
         ></video>
-        <!-- Sound toggle overlay -->
         <div class="sound-btn" [class.unmuted]="!isMuted">
           <span>{{ isMuted ? '🔇' : '🔊' }}</span>
         </div>

@@ -38,7 +38,7 @@ interface Particle {
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: #080508;
+      background: #0c0b10;
     }
 
     /* ─── Background photo ─── */
@@ -46,7 +46,7 @@ interface Particle {
       position: absolute;
       inset: 0;
       background: url('/assets/media/photo2.jpeg') center center / cover no-repeat;
-      filter: blur(18px) brightness(0.25) saturate(1.4);
+      filter: blur(22px) brightness(0.15) saturate(0.8);
       transform: scale(1.08);
       pointer-events: none;
     }
@@ -56,7 +56,7 @@ interface Particle {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, #080508ee 0%, #12091a99 40%, #1a0a1288 70%, #080508dd 100%);
+        linear-gradient(135deg, #0c0b10f0 0%, #13122088 40%, #1a182888 70%, #0c0b10e8 100%);
       pointer-events: none;
     }
 
@@ -64,20 +64,20 @@ interface Particle {
     .glow {
       position: absolute;
       border-radius: 50%;
-      filter: blur(80px);
+      filter: blur(90px);
       pointer-events: none;
-      animation: shimmer 6s ease-in-out infinite;
+      animation: shimmer 7s ease-in-out infinite;
     }
     .glow-left {
       width: 500px; height: 500px;
       left: -150px; top: 10%;
-      background: radial-gradient(circle, #4a207055 0%, transparent 70%);
+      background: radial-gradient(circle, #5a509035 0%, transparent 70%);
     }
     .glow-right {
       width: 400px; height: 400px;
       right: -100px; bottom: 15%;
-      background: radial-gradient(circle, #c0607044 0%, transparent 70%);
-      animation-delay: 3s;
+      background: radial-gradient(circle, #d0909c30 0%, transparent 70%);
+      animation-delay: 3.5s;
     }
 
     /* ─── Canvas ─── */
@@ -117,7 +117,7 @@ interface Particle {
     .eyebrow {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2rem, 4vw, 3.2rem);
-      color: #d4a843;
+      color: #cdc8f0;
       opacity: 0;
       animation: fadeSlideDown 1.2s ease-out 0.3s forwards;
       line-height: 1;
@@ -131,12 +131,12 @@ interface Particle {
       margin: 0.2rem 0 0.6rem;
       opacity: 0;
       animation: fadeSlideUp 1.2s ease-out 0.7s forwards;
-      color: #faf5ef;
-      text-shadow: 0 0 60px #d4a84322;
+      color: #f8f5ff;
+      text-shadow: 0 0 60px #a89fd422;
     }
 
     .title-accent {
-      background: linear-gradient(135deg, #f0cc7a 0%, #d4a843 40%, #f0c0c8 80%, #e090a0 100%);
+      background: linear-gradient(135deg, #cdc8f0 0%, #a89fd4 40%, #e8c4d0 80%, #d0909c 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -145,9 +145,9 @@ interface Particle {
     .subtitle {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(1.1rem, 2.2vw, 1.45rem);
-      color: #c8c0b8;
+      color: #c0bcd8;
       font-style: italic;
-      line-height: 1.6;
+      line-height: 1.7;
       opacity: 0;
       animation: fadeSlideUp 1.2s ease-out 1.1s forwards;
     }
@@ -158,13 +158,13 @@ interface Particle {
       gap: 0.7rem;
       margin-top: 1.8rem;
       padding: 0.6rem 1.5rem;
-      border: 1px solid #d4a84355;
+      border: 1px solid #a89fd455;
       border-radius: 999px;
-      background: #d4a84310;
+      background: #a89fd412;
       backdrop-filter: blur(8px);
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 0.95rem;
-      color: #d4a843;
+      color: #cdc8f0;
       letter-spacing: 0.07em;
       opacity: 0;
       animation: fadeSlideUp 1.2s ease-out 1.4s forwards;
@@ -172,9 +172,9 @@ interface Particle {
 
     .date-badge .dot {
       width: 7px; height: 7px;
-      background: radial-gradient(circle, #f0cc7a, #d4a843);
+      background: radial-gradient(circle, #cdc8f0, #a89fd4);
       border-radius: 50%;
-      box-shadow: 0 0 6px #d4a84388;
+      box-shadow: 0 0 6px #a89fd488;
       animation: pulse 2s ease-in-out infinite;
     }
 
@@ -187,127 +187,96 @@ interface Particle {
       font-size: 0.82rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #f0cc7a;
+      color: #a89fd4;
       opacity: 0;
       animation: fadeSlideUp 1.2s ease-out 1.7s forwards;
       transition: color 0.3s;
     }
-    .hero-cta:hover { color: #faf5ef; }
+    .hero-cta:hover { color: #f8f5ff; }
 
     .cta-arrow {
       width: 36px; height: 36px;
       border-radius: 50%;
-      border: 1px solid #d4a84355;
+      border: 1px solid #a89fd455;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.1rem;
       animation: bounce 2s ease-in-out infinite;
     }
 
-    /* ─── Portrait ─── */
+    /* ─── Portrait wrap ─── */
     .portrait-wrap {
       position: relative;
       flex-shrink: 0;
-      width: 280px;
-      height: 280px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      gap: 1rem;
       opacity: 0;
       animation: fadeSlideUp 1.4s ease-out 0.9s forwards;
     }
 
-    @media (min-width: 900px) {
-      .portrait-wrap { width: 340px; height: 340px; }
-    }
-
-    .portrait-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid;
-      animation: spin-slow linear infinite;
-    }
-    .ring-1 {
-      inset: 0;
-      border-color: #d4a84344;
-      animation-duration: 20s;
-    }
-    .ring-2 {
-      inset: -12px;
-      border-color: #f0c0c822;
-      animation-duration: 30s;
-      animation-direction: reverse;
-    }
-    .ring-3 {
-      inset: -24px;
-      border-color: #d4a84315;
-      animation-duration: 45s;
-    }
-
+    /* ─── Cadre carré statique ─── */
     .portrait-frame {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
+      width: 280px;
+      height: 340px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 3px solid;
-      border-color: #d4a843;
+      border: 2px solid #a89fd455;
       box-shadow:
-        0 0 0 6px #d4a84315,
-        0 0 40px #d4a84330,
-        0 0 80px #c0607020,
-        inset 0 0 30px #00000040;
-      animation: float 6s ease-in-out infinite;
+        0 0 0 6px #a89fd412,
+        0 12px 50px #00000060,
+        0 0 60px #a89fd420;
       position: relative;
-      z-index: 2;
+      transition: box-shadow 0.4s ease;
+    }
+
+    .portrait-frame:hover {
+      box-shadow:
+        0 0 0 6px #a89fd425,
+        0 20px 60px #00000070,
+        0 0 80px #a89fd435;
     }
 
     @media (min-width: 900px) {
-      .portrait-frame { width: 260px; height: 260px; }
+      .portrait-frame { width: 320px; height: 400px; }
     }
 
-    .portrait-frame img,
     .portrait-frame video {
       width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
-      transition: transform 0.6s ease;
+      display: block;
     }
-    .portrait-frame:hover img,
-    .portrait-frame:hover video { transform: scale(1.04); }
 
     /* Sound toggle button */
     .sound-btn {
       position: absolute;
-      bottom: 0.6rem;
-      right: 0.6rem;
-      width: 34px;
-      height: 34px;
-      background: #08050899;
-      border: 1px solid #d4a84355;
+      bottom: 0.8rem;
+      right: 0.8rem;
+      width: 38px;
+      height: 38px;
+      background: #0c0b10bb;
+      border: 1px solid #a89fd455;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
       transition: background 0.3s, border-color 0.3s;
       z-index: 5;
     }
     .sound-btn.unmuted {
-      background: #d4a84322;
-      border-color: #d4a843aa;
+      background: #a89fd422;
+      border-color: #a89fd4aa;
     }
 
     .portrait-label {
-      position: absolute;
-      bottom: -1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
       font-family: 'Great Vibes', cursive;
-      font-size: 1.6rem;
-      color: #d4a843;
+      font-size: 1.8rem;
+      color: #cdc8f0;
       white-space: nowrap;
-      text-shadow: 0 0 20px #d4a84366;
-      z-index: 3;
+      text-shadow: 0 0 20px #a89fd455;
     }
 
     /* ─── Scroll hint ─── */
@@ -323,7 +292,7 @@ interface Particle {
     .scroll-arrow {
       width: 1px;
       height: 52px;
-      background: linear-gradient(to bottom, #d4a843, transparent);
+      background: linear-gradient(to bottom, #a89fd4, transparent);
       animation: scrollPulse 2s ease-in-out infinite;
     }
 
@@ -371,7 +340,7 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
   private particles: Particle[] = [];
   private animationId = 0;
   private ctx!: CanvasRenderingContext2D;
-  private colors = ['#d4a843', '#f0cc7a', '#f0c0c8', '#e090a0', '#9b5e8a', '#faf5ef'];
+  private colors = ['#a89fd4', '#cdc8f0', '#e8c4d0', '#d0909c', '#8b84c0', '#f8f5ff'];
 
   constructor(private cdr: ChangeDetectorRef) {}
 
