@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { MusicPlayerComponent } from './components/music-player/music-player.component';
@@ -26,7 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent,
   ],
   template: `
-    <app-preloader (done)="preloaderDone = true"></app-preloader>
+    <app-preloader (done)="onPreloaderDone()"></app-preloader>
     <app-music-player></app-music-player>
     <main [class.visible]="preloaderDone">
       <app-hero></app-hero>
@@ -51,4 +51,19 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   preloaderDone = false;
+
+  constructor(private zone: NgZone) {}
+
+  onPreloaderDone(): void {
+    this.preloaderDone = true;
+    const hash = window.location.hash;
+    if (hash) {
+      this.zone.runOutsideAngular(() => {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      });
+    }
+  }
 }
