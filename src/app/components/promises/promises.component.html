@@ -1,0 +1,31 @@
+<section class="promises-section">
+
+  <div class="ambient" aria-hidden="true"></div>
+
+  <div class="section-header">
+    <span class="section-eyebrow">Mes engagements</span>
+    <h2 class="section-title">Ce que je promets,<br>si tu me laisses une chance</h2>
+    <div class="divider-gold">
+      <span style="color: #d4a843; font-size: 1.2rem;">♦</span>
+    </div>
+  </div>
+
+  <div class="promises-grid">
+    @for (p of promises; track p.title; let i = $index) {
+      <div class="promise-card">
+        <div class="promise-icon">{{ p.icon }}</div>
+        <h3 class="promise-title">{{ p.title }}</h3>
+        <p class="promise-text">{{ p.text }}</p>
+      </div>
+    }
+  </div>
+
+  <div class="closing-note">
+    <p>
+      Ces promesses ne valent rien si elles restent des mots sur un écran.
+      Je sais ça. C'est pourquoi je ne te demande pas de me croire maintenant —
+      <em>je te demande juste de me laisser te le prouver.</em>
+    </p>
+  </div>
+
+</section>
