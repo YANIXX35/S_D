@@ -34,13 +34,25 @@
       </div>
     </div>
 
-    <!-- Right: Portrait frame -->
+    <!-- Right: Portrait frame with video -->
     <div class="portrait-wrap">
       <div class="portrait-ring ring-3"></div>
       <div class="portrait-ring ring-2"></div>
       <div class="portrait-ring ring-1"></div>
-      <div class="portrait-frame">
-        <img src="assets/media/photo1.jpeg" alt="Sarah" />
+      <div class="portrait-frame" (click)="toggleSound()" style="cursor:pointer;">
+        <video
+          #portraitVideo
+          src="assets/media/portrait-video.mp4"
+          autoplay
+          loop
+          playsinline
+          muted
+          aria-label="Vidéo de Sarah"
+        ></video>
+        <!-- Sound toggle overlay -->
+        <div class="sound-btn" [class.unmuted]="!isMuted">
+          <span>{{ isMuted ? '🔇' : '🔊' }}</span>
+        </div>
       </div>
       <div class="portrait-label">
         <span class="font-script">Ma Sarah</span>

@@ -6,6 +6,7 @@ import {
   ElementRef,
   ViewChild,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -263,13 +264,38 @@ interface Particle {
       .portrait-frame { width: 260px; height: 260px; }
     }
 
-    .portrait-frame img {
+    .portrait-frame img,
+    .portrait-frame video {
       width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
       transition: transform 0.6s ease;
     }
-    .portrait-frame:hover img { transform: scale(1.06); }
+    .portrait-frame:hover img,
+    .portrait-frame:hover video { transform: scale(1.04); }
+
+    /* Sound toggle button */
+    .sound-btn {
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.6rem;
+      width: 34px;
+      height: 34px;
+      background: #08050899;
+      border: 1px solid #d4a84355;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      backdrop-filter: blur(6px);
+      transition: background 0.3s, border-color 0.3s;
+      z-index: 5;
+    }
+    .sound-btn.unmuted {
+      background: #d4a84322;
+      border-color: #d4a843aa;
+    }
 
     .portrait-label {
       position: absolute;
@@ -338,11 +364,16 @@ interface Particle {
 })
 export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('particleCanvas') canvasRef!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('portraitVideo') videoRef!: ElementRef<HTMLVideoElement>;
+
+  isMuted = true;
 
   private particles: Particle[] = [];
   private animationId = 0;
   private ctx!: CanvasRenderingContext2D;
   private colors = ['#d4a843', '#f0cc7a', '#f0c0c8', '#e090a0', '#9b5e8a', '#faf5ef'];
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 
@@ -461,6 +492,17 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     }
     this.animationId = requestAnimationFrame(() => this.animate());
+  }
+
+  toggleSound(): void {
+    const video = this.videoRef?.nativeElement;
+    if (!video) return;
+    this.isMuted = !this.isMuted;
+    video.muted = this.isMuted;
+    if (!this.isMuted) {
+      video.play();
+    }
+    this.cdr.markForCheck();
   }
 
   scrollToNext(): void {
